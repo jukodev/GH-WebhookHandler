@@ -1,0 +1,31 @@
+{
+  "name": "gh-webhookhandler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/65Juko/GH-WebhookHandler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/65Juko/GH-WebhookHandler/issues"
+  },
+  "homepage": "https://github.com/65Juko/GH-WebhookHandler#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.3",
+    "helmet": "^6.0.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.11.19"
+  }
+}
