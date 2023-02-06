@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 import { header, param } from 'express-validator';
 const { exec } = require('child_process');
 const { checkSecret, validate } = require('./middlewares');
-const readConfig = require('./readConfig');
+const { readConfig } = require('./readConfig');
 const hookHandler: Router = Router();
 
 const config: Config[] = readConfig();
@@ -45,4 +45,4 @@ interface Config {
   script: string;
 }
 
-module.exports = { hookHandler };
+module.exports = hookHandler;
