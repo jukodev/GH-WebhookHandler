@@ -4,6 +4,8 @@ const express = require('express');
 const logger = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+require('dotenv').config();
+
 const hookHandler = require('./hookHandler');
 const { readConfig } = require('./readConfig');
 const app: Express = express();
