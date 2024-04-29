@@ -15,7 +15,6 @@ hookHandler.post(
   checkSecret,
   (req: Request, res: Response) => {
     const hook = config.filter((e) => e.name === req.params.hook);
-    console.log('received hook on ' + req.params.hook);
     if (hook[0]) {
       exec(
         hook[0].script.toString(),
