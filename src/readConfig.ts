@@ -1,13 +1,12 @@
-const fs = require('fs');
+import fs from 'fs';
 
-function readConfig(): Config[] {
+export function readConfig(): Config[] {
   const raw = fs.readFileSync('config.json');
-  return JSON.parse(raw);
+  const data = raw.toString();
+  return JSON.parse(data);
 }
 
 export interface Config {
   name: string;
   script: string;
 }
-
-module.exports = { readConfig };

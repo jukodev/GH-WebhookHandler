@@ -1,8 +1,8 @@
 import { Request, Response, Router } from 'express';
 import { header, param } from 'express-validator';
-const { exec } = require('child_process');
-const { checkSecret, validate } = require('./middlewares');
-const { readConfig } = require('./readConfig');
+import { exec } from 'child_process';
+import { checkSecret, validate } from './middlewares.js';
+import { readConfig } from './readConfig.js';
 const hookHandler: Router = Router();
 
 const config: Config[] = readConfig();
@@ -18,7 +18,7 @@ hookHandler.post(
     if (hook[0]) {
       exec(
         hook[0].script.toString(),
-        (error: Error, stdout: string, stderr: Error) => {
+        (error: Error | null, stdout: string, stderr: string) => {
           if (error) {
             console.log(`error: ${error.message}`);
             res.sendStatus(500);
@@ -39,10 +39,9 @@ hookHandler.post(
     }
   }
 );
+export default hookHandler;
 
 interface Config {
   name: string;
   script: string;
 }
-
-module.exports = hookHandler;

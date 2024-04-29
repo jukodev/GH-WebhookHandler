@@ -1,13 +1,14 @@
 import { Request, Response, Express } from 'express';
-import { Config } from './readConfig';
-const express = require('express');
-const logger = require('morgan');
-const helmet = require('helmet');
-const cors = require('cors');
-require('dotenv').config();
+import { Config } from './readConfig.js';
+import express from 'express';
+import logger from 'morgan';
+import helmet from 'helmet';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const hookHandler = require('./hookHandler');
-const { readConfig } = require('./readConfig');
+import hookHandler from './hookHandler.js';
+import { readConfig } from './readConfig.js';
 const app: Express = express();
 
 app.use(cors({ origin: '*' }));

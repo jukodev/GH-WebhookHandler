@@ -2,7 +2,11 @@
   "name": "gh-webhookhandler",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "type": "module",
   "scripts": {
     "build": "tsc"
   },
@@ -26,7 +30,9 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^18.11.19",
     "typescript": "^4.9.3"
   }
