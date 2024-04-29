@@ -16,7 +16,7 @@ hookHandler.post(
   (req: Request, res: Response) => {
     const hook = config.filter((e) => e.name === req.params.hook);
     if (hook[0]) {
-      res.sendStatus(200).json({ message: 'hook found and executed' });
+      res.status(200).json({ message: 'hook found and executed' });
       exec(
         hook[0].script.toString(),
         (error: Error | null, stdout: string, stderr: string) => {
